@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://64yffnt38x66"]
+
+[ext_resource type="Script" uid="uid://ccm3jxpsujbbj" path="res://gd_N2_furnace.gd" id="1_84dw0"]
+[ext_resource type="Texture2D" uid="uid://3kc5k1hk63pc" path="res://icon.svg" id="2_fo4q8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo1tw"]
+size = Vector2(129, 128)
+
+[node name="Tscn_N2_furnace" type="Node2D" unique_id=1734679210]
+script = ExtResource("1_84dw0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1543028576]
+texture = ExtResource("2_fo4q8")
+
+[node name="Timer" type="Timer" parent="Sprite2D" unique_id=1872949535]
+wait_time = 3.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=970681020]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=920785649]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_yo1tw")
+
+[connection signal="timeout" from="Sprite2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

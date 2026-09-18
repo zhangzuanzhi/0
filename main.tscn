@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cuijcgnnq31b8"]
+
+[ext_resource type="Script" uid="uid://c17veyf5pwj4v" path="res://gd_main.gd" id="1_gx85o"]
+[ext_resource type="Script" uid="uid://c3l4efwk1o711" path="res://gd_button_warehouse.gd" id="2_0blfp"]
+[ext_resource type="Script" uid="uid://dt80l453nbekf" path="res://gd_button_machine.gd" id="3_gx85o"]
+
+[node name="Main" type="Node2D" unique_id=2038781203]
+script = ExtResource("1_gx85o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2116188991]
+
+[node name="ScrollContainer_Warehouse" type="ScrollContainer" parent="CanvasLayer" unique_id=1400657052]
+offset_left = 10.0
+offset_top = 71.0
+offset_right = 253.0
+offset_bottom = 206.0
+
+[node name="Label_Warehouse" type="Label" parent="CanvasLayer/ScrollContainer_Warehouse" unique_id=1224408939]
+layout_mode = 2
+script = ExtResource("2_0blfp")
+
+[node name="Button_Warehouse" type="Button" parent="CanvasLayer" unique_id=318371616]
+offset_top = 1.0
+offset_right = 72.0
+offset_bottom = 32.0
+text = "仓库"
+
+[node name="ScrollContainer_Machine" type="ScrollContainer" parent="CanvasLayer" unique_id=518264604]
+offset_left = 19.0
+offset_top = 235.0
+offset_right = 300.0
+offset_bottom = 364.0
+
+[node name="Label_Machine" type="Label" parent="CanvasLayer/ScrollContainer_Machine" unique_id=2029744466]
+layout_mode = 2
+script = ExtResource("3_gx85o")
+
+[node name="Button_Machine" type="Button" parent="CanvasLayer" unique_id=1171913655]
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 44.0
+offset_bottom = 67.0
+text = "设备"
+
+[connection signal="pressed" from="CanvasLayer/Button_Warehouse" to="." method="_on_Button_Warehouse_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button_Machine" to="." method="_on_Button_Machine_pressed"]
